@@ -8,14 +8,7 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-app.get("/", (req, res) => {
-  res.send("Welcome to the Todos API!");
-});
-
-
-app.use("/api/v1/todos", todosRouter);
-
-
+app.use("/api/v1", todosRouter);
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT} `);
